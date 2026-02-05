@@ -1,0 +1,60 @@
+
+/* Cart Logic */
+let cartCount = 0;
+
+function addToCart(productId, buttonElement) {
+    const cartBadge = document.getElementById('cart-badge');
+    const cartIcon = document.querySelector('.cart-link svg');
+
+    // 1. Get Image Position
+    // Find the product image within the same shop-item container
+    const shopItem = buttonElement.closest('.shop-item');
+    const productImg = shopItem.querySelector('img');
+
+    if (productImg && cartIcon) {
+        // 2. Clone Image for Animation
+        const flyImg = productImg.cloneNode();
+        flyImg.classList.add('fly-item');
+
+        // Set initial position (matching the product image)
+        const imgRect = productImg.getBoundingClientRect();
+        flyImg.style.left = `${imgRect.left}px`;
+        flyImg.style.top = `${imgRect.top}px`;
+        flyImg.style.width = `${imgRect.width}px`;
+        flyImg.style.height = `${imgRect.height}px`;
+
+        document.body.appendChild(flyImg);
+
+        // 3. Animate to Cart
+        const cartRect = cartIcon.getBoundingClientRect();
+
+        // Use setTimeout to allow the browser to render the initial element before moving it
+        setTimeout(() => {
+            flyImg.style.left = `${cartRect.left}px`;
+            flyImg.style.top = `${cartRect.top}px`;
+            flyImg.style.width = '20px';
+            flyImg.style.height = '20px';
+            flyImg.style.opacity = '0.5';
+        }, 10);
+
+        // 4. Update Counter after Animation
+        setTimeout(() => {
+            flyImg.remove();
+            cartCount++;
+            cartBadge.innerText = cartCount;
+            
+            // Bump animation for badge
+            cartBadge.style.transform = 'scale(1.5)';
+            setTimeout(() => cartBadge.style.transform = 'scale(1)', 200);
+            
+        }, 800); // 800ms matches the CSS transition duration
+    } else {
+        // Fallback if elements not found
+        cartCount++;
+        cartBadge.innerText = cartCount;
+    }
+}
+
+function bukaKasir() {
+    alert("Fitur keranjang akan segera hadir!");
+}

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KULTURA.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/account.css">
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+                publicKey: "sk490yw2gMLcyVr2a",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="brand-container">
+            <div class="logo">KULTURA.</div>
+            <div id="store-status" class="store-status">Loading...</div>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="center-menu">
+            <a href="#home" data-i18n="nav_home">Home</a>
+            <a href="#aboutUs" onclick="openAbout()" data-i18n="nav_about">About</a>
+            <a href="#produk" data-i18n="nav_shop">Shop</a>
+            <a href="#" onclick="openContact()" data-i18n="nav_contact">Contact</a>
+        </div>
+
+        <div class="nav-icons">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Cari Produk...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <a onclick="bukaKasir()" class="cart-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-shopping-cart">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="cart-badge" class="cart-badge">0</span>
+            </a>
+
+            <a href="" class="user-link">
+                <div class="nav-user-icon" id="nav-user-icon">
+                    <i class="far fa-user"></i>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <div class="hero-banner" id="home">
+        <div class="hero-slides">
+            <div class="slide active" style="background-image: url('img/heroBannerHD.jpeg')"></div>
+            <div class="slide" style="background-image: url('img/heroBannerHD1.png')"></div>
+            <div class="slide" style="background-image: url('img/heroBannerHD2.png')"></div>
+        </div>
+        <div class="overlay"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 data-i18n="hero_title">Elegance in Every Stitch</h1>
+            <p data-i18n="hero_subtitle">Discover the finest collection of apparel that defines your style.
+                Quality craftsmanship meets modern design.</p>
+            <a href="#produk" class="cta-button" data-i18n="hero_cta">Shop Now</a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <p>Scroll Down</p>
+        </div>
+    </div>
+
+    <!-- Value Proposition Section -->
+    <div class="value-props">
+        <div class="prop-item" data-aos="fade-up" data-aos-delay="0">
+            <i class="fas fa-shipping-fast"></i>
+            <h3 data-i18n="prop_shipping_title">Fast Shipping</h3>
+            <p data-i18n="prop_shipping_desc">Get your orders delivered comfortably to your door.</p>
+        </div>
+        <div class="prop-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-medal"></i>
+            <h3 data-i18n="prop_quality_title">Premium Quality</h3>
+            <p data-i18n="prop_quality_desc">We use only the finest materials for our products.</p>
+        </div>
+        <div class="prop-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-headset"></i>
+            <h3 data-i18n="prop_support_title">24/7 Support</h3>
+            <p data-i18n="prop_support_desc">Our team is here to help you anytime, anywhere.</p>
+        </div>
+    </div>
+
+    <section class="about-us" id="aboutUs">
+        <div class="about-container">
+            <div class="about-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ClZ6CQFmi1s"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="about-text" data-aos="fade-right">
+                <h2 data-i18n="about_title">About Us</h2>
+                <p data-i18n="about_desc">We are passionate about creating clothing that not only looks good but feels
+                    good.
+                    Our journey began with a simple idea: to make high-quality fashion accessible to everyone.
+                    Every piece is crafted with care and attention to detail.</p>
+                <a href="#" class="read-more" onclick="toggleModal()" data-i18n="about_readmore">Read Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Modal -->
+    <div class="modal-overlay" id="aboutModal" onclick="toggleModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="toggleModal()">&times;</span>
+            <h2>Tentang KULTURA</h2>
+            <p>Selamat datang di KULTURA, rumah bagi keindahan kerajinan tangan Indonesia. Sejak didirikan, kami
+                memiliki satu misi utama: mengangkat martabat pengrajin lokal dan memperkenalkan kekayaan budaya
+                nusantara ke panggung dunia.</p>
+            <br>
+            <p>Setiap produk yang Anda temukan di sini bukan sekadar barang, melainkan cerita. Cerita tentang
+                ketelatenan tangan-tangan terampil yang menenun, memahat, dan membentuk bahan-bahan alami menjadi karya
+                seni yang fungsional. Kami bekerja langsung dengan komunitas pengrajin di berbagai pelosok daerah,
+                memastikan praktik perdagangan yang adil (fair trade) dan keberlanjutan lingkungan.</p>
+            <br>
+            <p>Filosofi kami sederhana: <strong>Tradisi untuk Masa Depan</strong>. Kami memadukan teknik tradisional
+                warisan leluhur dengan sentuhan desain modern yang relevan dengan gaya hidup masa kini. Dengan memilih
+                KULTURA, Anda tidak hanya mempercantik ruang hidup Anda, tetapi juga turut menjaga agar api kebudayaan
+                kita tetap menyala.</p>
+        </div>
+    </div>
+    <!-- Shop Section -->
+    <section id="produk" class="shop-section">
+        <h2 class="section-title" data-i18n="shop_title">Shop Our Products</h2>
+        <div class="category-filter" id="shop-categories">
+            <button class="filter-btn active" onclick="filterProduk('all')" data-i18n="cat_all">All</button>
+            <button class="filter-btn" onclick="filterProduk('bestseller')"
+                style="color: #e67e22; font-weight: bold;">Best Seller 🔥</button>
+            <button class="filter-btn" onclick="filterProduk('Baju')" data-i18n="cat_clothing">Baju</button>
+            <button class="filter-btn" onclick="filterProduk('Celana')" data-i18n="cat_clothing">Celana</button>
+            <button class="filter-btn" onclick="filterProduk('Kaos Kaki')" data-i18n="cat_socks">Kaos Kaki</button>
+            <button class="filter-btn" onclick="filterProduk('Sepatu')" data-i18n="cat_shoes">Sepatu</button>
+            <button class="filter-btn" onclick="filterProduk('Topi')" data-i18n="cat_hats">Topi</button>
+        </div>
+
+        <div class="shop-content">
+            <!-- Items rendered dynamically by script.js -->
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="product-detail-modal" class="modal-overlay">
+        <div class="detail-modal-content">
+            <span class="close-detail" onclick="closeProductModal()">&times;</span>
+            <div class="detail-grid">
+                <div class="detail-left">
+                    <img id="modal-img" src="" alt="Product Image">
+                </div>
+                <div class="detail-right">
+                    <h2 id="modal-title">Product Name</h2>
+                    <p id="modal-price" class="detail-price">Rp 0</p>
+                    <hr class="divider">
+                    <p id="modal-desc" class="detail-desc">Description goes here...</p>
+                    <select id="det-size"
+                        style="width:100%; padding:10px; margin-bottom:15px; border-radius:5px; background-color: aliceblue;">
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <div class="detail-extra">
+                        <h4>Details:</h4>
+                        <p id="modal-details">Ingredients / Features</p>
+                    </div>
+                    <button id="modal-add-btn" class="btn-modal-add">Masukkan Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marquee Section -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <span>ART & CULTURE &nbsp;&bull;&nbsp; TIMELESS STYLE &nbsp;&bull;&nbsp; EXPRESS YOURSELF &nbsp;&bull;&nbsp;
+                AUTHENTIC VIBES &nbsp;&bull;&nbsp; CONFIDENCE IN WEAR &nbsp;&bull;&nbsp; </span>
+            <span>ART & CULTURE &nbsp;&bull;&nbsp; TIMELESS STYLE &nbsp;&bull;&nbsp; EXPRESS YOURSELF &nbsp;&bull;&nbsp;
+                AUTHENTIC VIBES &nbsp;&bull;&nbsp; CONFIDENCE IN WEAR &nbsp;&bull;&nbsp; </span>
+        </div>
+    </div>
+
+    <!-- Rating/Testimonial Section -->
+    <section class="ratings-section">
+        <div class="rating-header-container">
+            <div class="rating-header" data-aos="fade-up">
+                <h2 data-i18n="ratings_title">What Our Customers Say</h2>
+                <p data-i18n="ratings_subtitle">Trusted by thousands of happy customers worldwide.</p>
+            </div>
+        </div>
+
+        <div class="rating-grid">
+            <!-- Card 1 -->
+            <div class="rating-card" data-aos="fade-up">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Bahannya benar-benar premium, tidak panas saat dipakai seharian. Desainnya unik
+                    banget, jarang ada yang nyamain. Suka banget!"</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Andi+P&background=2c3e50&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Andi Pratama</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="rating-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Awalnya ragu beli online, tapi pas barang dateng ternyata fit-nya pas banget di
+                    badan. Jahitannya rapi dan kokoh. Bakal langganan sih ini."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Siti+N&background=e74c3c&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Siti Nurhaliza</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="rating-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Sangat worth it dengan harganya. Kualitas kainnya juara, warna tidak luntur
+                    setelah dicuci berkali-kali. Pengiriman juga cepat."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Budi+S&background=27ae60&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Budi Santoso</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- HIDDEN EXTRA REVIEWS -->
+        <div id="extra-reviews" class="rating-grid" style="display: none; margin-top: 30px;">
+            <!-- Extra 1 -->
+            <div class="rating-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"Suka banget sama koleksi terbarunya. Warnanya soft dan elegan."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Rina+M&background=9b59b6&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Rina Melati</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra 2 -->
+            <!-- Extra 2 (4 Stars) -->
+            <div class="rating-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <p class="review-text">"Pengiriman cepat, packing aman. Bajunya agak kegedean dikit tapi oke lah."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Dimas+A&background=f1c40f&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Dimas Anggara</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra 3 (5 Stars) -->
+            <div class="rating-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"Kualitas gak kaleng-kaleng. Udah order 3 kali disini gapernah ngecewain."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Citra+L&background=1abc9c&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Citra Lestari</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra 4 (4 Stars) -->
+            <div class="rating-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="far fa-star"></i></div>
+                <p class="review-text">"Admin ramah banget pas nanya size chart. Recommended seller!"</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Bayu+P&background=34495e&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Bayu Pradana</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra 5 (3.5 Stars -> 3 Stars visual) -->
+            <div class="rating-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="far fa-star"></i><i class="far fa-star"></i></div>
+                <p class="review-text">"Bahan adem, tapi sablonan agak kurang rapi dikit."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Eko+W&background=e67e22&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Eko Wahyudi</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra 6 (5 Stars) -->
+            <div class="rating-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"Top markotop! Bakal beli lagi buat kado adik."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-img"
+                        style="background-image: url('https://ui-avatars.com/api/?name=Sarah+J&background=e91e63&color=fff');">
+                    </div>
+                    <div class="reviewer-text">
+                        <h4>Sarah Julia</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REVIEW ACTIONS BOTTOM -->
+        <div class="review-actions-bottom"
+            style="text-align: center; margin-top: 30px; width: 100%; display: flex; justify-content: center; gap: 15px;"
+            data-aos="fade-up">
+            <button class="btn btn-review-primary" onclick="openReviewModal()">
+                <i class="fas fa-pen"></i> <span data-i18n="btn_write_review">Beri Ulasan</span>
+            </button>
+            <button class="btn btn-review-secondary" onclick="toggleAllReviews()">
+                <span data-i18n="btn_view_all_reviews">Lihat Semua</span> <i class="fas fa-chevron-down"
+                    id="icon-view-all"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title" data-aos="fade-up" data-i18n="faq_title">Frequently Asked Questions</h2>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    <span data-i18n="faq_q1">Berapa lama pengiriman barang?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a1">Pengiriman biasanya memakan waktu 2-3 hari kerja untuk wilayah Jabodetabek dan
+                        3-5 hari untuk luar pulau Jawa.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <button class="faq-question">
+                    <span data-i18n="faq_q2">Apakah bisa tukar size jika tidak muat?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a2">Ya, kami menyediakan garansi tukar size dalam waktu 7 hari setelah barang
+                        diterima, dengan syarat tag masih terpasang.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <button class="faq-question">
+                    <span data-i18n="faq_q3">Bagaimana cara melacak pesanan saya?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq_a3">Setelah pesanan dikirim, kami akan mengirimkan nomor resi melalui email atau
+                        WhatsApp yang bisa Anda cek di website kurir terkait.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- Newsletter Section -->
+    <!-- Bottom Engagement Section (Member & Newsletter) -->
+    <section class="bottom-engagement-section" data-aos="fade-up">
+        <div class="engagement-container">
+            <!-- 1. Membership Card -->
+            <div class="membership-card">
+                <div class="mem-icon"><i class="fas fa-crown"></i></div>
+                <h3 data-i18n="mem_card_title">Join Membership</h3>
+                <p data-i18n="mem_card_desc">Unlock exclusive perks and get 10% off your purchase immediately.</p>
+                <div id="mem-action-area">
+                    <button class="btn-join-member" onclick="joinMember()" data-i18n="btn_join_member">Join Now</button>
+                </div>
+            </div>
+
+            <!-- 2. Newsletter -->
+            <div class="newsletter-box">
+                <h3 data-i18n="newsletter_title">Join Our Newsletter</h3>
+                <p data-i18n="newsletter_desc">Subscribe to get special offers, free giveaways, and once-in-a-lifetime
+                    deals.
+                </p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                    <button type="submit" data-i18n="newsletter_btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <div class="logo">KULTURA<span class="accent-dot">.</span></div>
+                <p class="tagline" data-i18n="footer_desc">Redefining modern fashion with elegance and quality.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer_links">Quick Links</h4>
+                <ul>
+                    <li><a href="#" data-i18n="nav_home">Home</a></li>
+                    <li><a href="#produk" data-i18n="nav_shop">Shop</a></li>
+                    <li><a href="javascript:void(0)" onclick="openAbout()" data-i18n="nav_about">About Us</a></li>
+                    <li><a href="javascript:void(0)" onclick="openContact()" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer_care">Customer Care</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="openCustomerCare('shipping')"
+                            data-i18n="care_shipping">Shipping & Returns</a></li>
+                    <li><a href="javascript:void(0)" onclick="openCustomerCare('size')" data-i18n="care_size">Size
+                            Guide</a></li>
+                    <li><a href="javascript:void(0)" onclick="openCustomerCare('track')" data-i18n="care_track">Track
+                            Order</a></li>
+                    <li><a href="javascript:void(0)" onclick="openCustomerCare('faq')" data-i18n="care_faq">FAQs</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-i18n="footer_follow">Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/tenpostfourpl_?igsh=MXR3aXYzd2hmeDlheg=="><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@kokomelon70"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://youtube.com/@behikech8026?si=z5LVVpghG9kUJHMb"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer_copyright">&copy; 2026 Kultura. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- NOTIFICATION -->
+    <div id="toast-notif" class="toast">Item Added to Cart!</div>
+
+    <!-- SIDEBAR COMPONENTS (Overlay & Cart) -->
+    <div class="sidebar-overlay" onclick="tutupKasir()"></div>
+    <div class="sidebar-cart" id="sidebarCart">
+        <div class="sidebar-header">
+            <h3>KERANJANG ANDA</h3>
+            <button class="close-sidebar" onclick="tutupKasir()">&times;</button>
+        </div>
+        <div id="cart-items-list" class="cart-scroll-area">
+            <p style="text-align:center; color:#888; margin-top:50px;">Keranjang belanja Anda kosong.</p>
+        </div>
+
+        <!-- MEMBER DYNAMIC SECTION -->
+        <div id="sidebar-member-ui" class="member-section"
+            style="padding: 20px 0; margin: 15px 0; border-top: 1px dashed #eee;">
+            <!-- Content Injected via JS -->
+            <p style="text-align: center; color: #888;">Loading...</p>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="summary-row"><span>Subtotal</span> <span id="txt-subtotal">Rp 0</span></div>
+            <div class="summary-row" id="row-diskon-barang" style="display:none; color:green;">
+                <span>Diskon Barang</span> <span id="txt-diskon-barang">- Rp 0</span>
+            </div>
+            <div class="summary-row" id="row-diskon-belanja" style="display:none; color:green;">
+                <span>Diskon Belanja</span> <span id="txt-diskon-belanja">- Rp 0</span>
+            </div>
+            <div class="summary-row" id="row-diskon-member" style="display:none; color:green;">
+                <span>Diskon Member</span> <span id="txt-diskon-member">- Rp 0</span>
+            </div>
+            <div class="summary-row total"><span>Total</span> <span id="txt-total-akhir">Rp 0</span></div>
+            <div class="payment-section">
+                <input type="number" id="input-bayar" class="input-voucher"
+                    placeholder="Masukkan Nominal Pembayaran (Rp)" onkeyup="cekUang()">
+                <small id="status-bayar" style="display:block; text-align:right; margin-top:5px; color:#888;">Menunggu
+                    input...</small>
+            </div>
+            <button id="btn-bayar" onclick="prosesBayar()" disabled>Bayar Sekarang</button>
+        </div>
+    </div>
+
+    <!-- =========================================
+         ACCOUNT FEATURES MODALS
+    ========================================== -->
+
+    <!-- =========================================
+         ACCOUNT FEATURES MODALS
+    ========================================== -->
+
+    <!-- LOGIN OVERLAY REMOVED (Moved to login.html) -->
+
+    <!-- 2. ACCOUNT POPUP (Google Style) -->
+    <div id="account-popup" class="account-popup">
+        <div class="popup-header">
+            <div class="user-avatar-large" onclick="openProfileOptions()">
+                <div id="popup-initial">U</div>
+                <div class="avatar-overlay">
+                    <i class="fas fa-camera"></i>
+                    <span>Ganti Profil</span>
+                </div>
+            </div>
+            <div class="user-details">
+                <h4 id="popup-username">User Name</h4>
+                <p id="popup-email">user@example.com</p>
+            </div>
+        </div>
+        <div class="popup-menu">
+            <a href="javascript:void(0)" onclick="openSettings()"><i class="fas fa-cog"></i> <span
+                    data-i18n="settings_title">Settings</span></a>
+            <hr>
+            <a href="javascript:void(0)" onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> <span
+                    data-i18n="logout">Log
+                    Out</span></a>
+        </div>
+    </div>
+
+    <!-- 3. SETTINGS MODAL -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-content settings-card">
+            <span class="close-modal" onclick="closeSettings()">&times;</span>
+            <h2 data-i18n="settings_title">Settings</h2>
+
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h4 data-i18n="theme_title">Dark Mode</h4>
+                    <p data-i18n="theme_desc">Switch between light and dark themes</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <!-- Language Setting -->
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h4 data-i18n="lang_title">Language</h4>
+                    <p data-i18n="lang_desc">Switch between English and Bahasa</p>
+                </div>
+                <!-- Changed to toggle switch for Eng/Indo -->
+                <select id="lang-select" onchange="changeLanguage()" class="lang-dropdown">
+                    <option value="en">English (EN)</option>
+                    <option value="id">Bahasa Indonesia (ID)</option>
+                </select>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h4 data-i18n="notif_title">Notifications</h4>
+                    <p data-i18n="notif_desc">Receive updates about new products</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="notif-toggle" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <!-- Music Player Section -->
+            <div class="setting-item"
+                style="flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+                <h4 style="font-size: 1rem; margin-bottom: 5px;" data-i18n="music_title_label">Background Music</h4>
+                <div class="music-player"
+                    style="width: 100%; background: #f9f9f9; padding: 15px; border-radius: 8px; text-align: center;">
+                    <div id="music-title" style="font-weight: 600; margin-bottom: 5px; font-size: 14px;">No Song Playing
+                    </div>
+                    <div id="music-time" style="font-size: 12px; color: #666; margin-bottom: 10px;">00:00 / 00:00</div>
+
+                    <div class="music-controls"
+                        style="display: flex; justify-content: center; gap: 15px; align-items: center;">
+                        <button onclick="prevTrack()" class="mini-btn" style="padding: 8px 12px;"><i
+                                class="fas fa-step-backward"></i></button>
+                        <button onclick="playPauseTrack()" id="play-pause-btn" class="mini-btn"
+                            style="padding: 10px 15px; background: #2c3e50; color: white;"><i
+                                class="fas fa-play"></i></button>
+                        <button onclick="nextTrack()" class="mini-btn" style="padding: 8px 12px;"><i
+                                class="fas fa-step-forward"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFILE OPTIONS MODAL -->
+    <div id="profile-options-modal" class="modal-overlay" style="z-index: 2100;">
+        <div class="modal-content" style="max-width: 350px; text-align: center;">
+            <span class="close-modal" onclick="closeProfileOptions()">&times;</span>
+            <h3>Ubah Foto Profil</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+                <button onclick="document.getElementById('profile-upload').click()" class="btn-primary"
+                    style="background: #2c3e50; color: white; padding: 10px; border-radius: 8px; border:none; cursor:pointer;">
+                    <i class="fas fa-upload"></i> Upload Foto
+                </button>
+                <button onclick="removeProfilePicture()" class="btn-danger"
+                    style="background: #e74c3c; color: white; padding: 10px; border-radius: 8px; border:none; cursor:pointer;">
+                    <i class="fas fa-trash"></i> Hapus Foto
+                </button>
+            </div>
+            <input type="file" id="profile-upload" accept="image/*" style="display: none;"
+                onchange="handleProfileUpload(this)">
+        </div>
+    </div>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script/script.js"></script>
+    <!-- SUCCESS MODAL -->
+    <div id="success-modal" class="success-modal">
+        <div class="success-content">
+            <!-- SUCCESS CHECKMARK POP -->
+            <div class="checkmark-wrapper">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+            </div>
+            <h2>Pembayaran Berhasil!</h2>
+            <p>Terima kasih telah berbelanja di Kultura.</p>
+            <button onclick="closeSuccessModal()">OK</button>
+        </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div id="contact-modal" class="contact-modal">
+        <div class="contact-content">
+            <span class="close-contact" onclick="closeContact()">&times;</span>
+            <h2>Kunjungi Kami </h2>
+
+            <!-- Google Map -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.0855920438776!2d115.23143447359726!3d-8.68341058842377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2409b0e5e80db%3A0xad78f1ff66b638d2!2sSMK%20TI%20Global%20Denpasar!5e0!3m2!1sid!2sid!4v1770213683658!5m2!1sid!2sid"
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="address-box">
+                <p><strong>Kultura Store HQ</strong></p>
+                <p>Jl. Tukad Citarum No.44<br>Dauh Puri Kelod, Denpasar Selatan, Kota Denpasar, Bali 80234
+                </p>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+
+            <!-- Social Media Expanding Buttons -->
+            <div class="social-container">
+                <a href="javascript:void(0)" class="social-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="javascript:void(0)" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="javascript:void(0)" class="social-btn youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="javascript:void(0)" class="social-btn tiktok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- REVIEW MODAL -->
+    <div id="review-modal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close-modal" onclick="closeReviewModal()">&times;</span>
+            <h2 data-i18n="modal_review_title">Beri Ulasan</h2>
+            <form id="review-form" onsubmit="submitReview(event)">
+                <div class="form-group">
+                    <label data-i18n="review_rating_label">Rating</label>
+                    <div class="star-rating-input">
+                        <i class="far fa-star" data-value="1" onclick="selectStar(1)"></i>
+                        <i class="far fa-star" data-value="2" onclick="selectStar(2)"></i>
+                        <i class="far fa-star" data-value="3" onclick="selectStar(3)"></i>
+                        <i class="far fa-star" data-value="4" onclick="selectStar(4)"></i>
+                        <i class="far fa-star" data-value="5" onclick="selectStar(5)"></i>
+                    </div>
+                    <input type="hidden" id="review-rating" required>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="label_comment">Komentar</label>
+                    <textarea id="review-comment" rows="4" style="width:100%; padding:10px; border-radius:5px;"
+                        required></textarea>
+                </div>
+                <!-- Helper for user info (usually auto-filled if logged in) -->
+                <button type="submit" class="btn btn-submit-premium" data-i18n="btn_submit_review">Kirim Ulasan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- CUSTOMER CARE MODAL -->
+    <div id="customer-care-modal" class="modal-overlay" style="z-index: 2200;">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close-modal" onclick="closeCustomerCare()">&times;</span>
+            <h2 id="care-modal-title" style="margin-bottom: 20px; font-family: 'Bebas Neue';">Info</h2>
+            <div id="care-modal-body" style="line-height: 1.6; color: #555; text-align: left;">
+                <!-- Content will be injected via JS -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
