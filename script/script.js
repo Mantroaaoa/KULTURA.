@@ -670,7 +670,7 @@ const productsDB = [
         id: 101,
         category: "Baju",
         price: 50000,
-        image: "img/baju1T.png",
+        image: "img/Baju1T.png",
         name: { id: "Polo nit Cream", en: "Cream Knit Polo" },
         shortDesc: { id: "Gaya kasual klasik.", en: "Classic casual style." },
         description: { id: "Baju polo rajut berwarna cream yang memberikan kesan elegan namun tetap santai. Terbuat dari bahan katun rajut premium yang lembut di kulit, bernapas, dan menyerap keringat dengan baik, sehingga sangat nyaman digunakan sepanjang hari. Desain kerah yang rapi dengan aksen garis tipis memberikan sentuhan klasik yang timeless. Cocok dipadukan dengan celana chino untuk tampilan semi-formal atau jeans untuk gaya yang lebih santai. Pilihan tepat untuk pria yang mengutamakan kenyamanan dan gaya dalam satu paket.", en: "Cream knitted polo shirt giving an elegant yet relaxed vibe. Made from premium knitted cotton." },
