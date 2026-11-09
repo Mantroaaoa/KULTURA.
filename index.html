@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - KULTURA</title>
-    <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -24,7 +23,6 @@
             background-position: center;
         }
 
-        /* Darken background for readability */
         body::before {
             content: '';
             position: absolute;
@@ -50,7 +48,6 @@
         <h2 style="margin-bottom: 5px;">KULTURA.</h2>
         <p data-i18n="login_subtitle" style="margin-bottom: 20px;">Welcome back to style.</p>
 
-        <!-- LOGIN FORM -->
         <form id="login-form">
             <div class="form-group">
                 <label data-i18n="label_username">Username or Email</label>
@@ -71,7 +68,6 @@
             </p>
         </form>
 
-        <!-- SIGN UP FORM (Hidden by default) -->
         <form id="signup-form" style="display: none;">
             <div class="form-group">
                 <label>Username</label>
@@ -93,7 +89,6 @@
             </p>
         </form>
 
-        <!-- Social Login -->
         <div class="social-login-section">
             <p>Or continue with</p>
             <div class="social-icons">
@@ -134,16 +129,11 @@
 
     <script src="script/auth.js"></script>
     <script>
-        // Theme & Lang Initialization (Kept simple here, mostly handled in auth.js or pure init)
-        // 1. Theme Check
         const savedTheme = localStorage.getItem('kulturaTheme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-theme');
         }
-
-        // 2. Translatons Init for Login Page
         const lang = localStorage.getItem('kulturaLang') || 'en';
-        // Simple Translation Apply for Static Login Elements
         const t_login = {
             login_subtitle: { en: "Please log in to continue", id: "Silakan masuk untuk melanjutkan" },
             label_username: { en: "Username or Email", id: "Username atau Email" },
